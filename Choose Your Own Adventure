@@ -1,0 +1,175 @@
+import time
+
+def v2():
+    print("Lets run it")
+    userinput2 = ()
+    firstattack()
+
+def firstattack():
+    print("Your opponents play double hog graveyard push")
+    time.sleep(1)
+    userinput3 = input("Do you play inferno tower or mini-pekka")
+    if userinput3.lower() == "inferno tower":
+        defense1oftwo()
+    elif userinput3.lower() == "mini-pekka":
+        defense2oftwo()
+    else:
+        print("Only answer inferno tower or mini-pekka")
+        firstattack()
+
+def defense1oftwo():
+    print("You kill the hogs but the graveyard does some damage")
+    pushnow()
+
+def pushnow():
+    print("Now it is your turn to play offensive")
+    time.sleep(2)
+    userinput8 = input("Do you play xbow+tesla or lavahound+balloon")
+    if userinput8.lower() == "xbow+tesla":
+        getcountered()
+    elif userinput8.lower() == "lavahound+balloon":
+        threecrnpush()
+    else:
+        print("Only answer xbow+tesla or lavahound+balloon")
+        pushnow()
+
+def getcountered():
+    print("The opponent plays giant skeleton and scarmy and counters you.")
+    time.sleep(2)
+    print("You are now extremely short on elixir, so the opponent takes a tower and wins")
+    optionplay()
+
+
+def threecrnpush():
+    print("The opponent hardly has any air defense, so you end up taking a tower and then 3 crowning.")
+    time.sleep(3)
+    print("You then emote spam him")
+    optionplay()
+
+def defense2oftwo():
+    print("The hogs and graveyard overwhelm the mini-pekka and tower and do significant damage")
+    counterpush()
+
+def counterpush():
+    print("Time is running out to take a tower, you must put together a counter push")
+    time.sleep(4)
+    userinput9 = input("Do you place golem in the back or in the front")
+    if userinput9.lower() == "in the back":
+        print("now you can build up a bigger push")
+        time.sleep(3)
+        threecrownpush()
+    elif userinput9.lower() == "in the front":
+        print("That was not a smart decision....")
+        losing()
+    else:
+        print("Only answer in the back or in the front")
+        counterpush()
+
+def losing():
+    print("The golem was easily countered and since you have no elixir, the opponent easily 3 crowns you")
+    optionplay()
+
+def threecrownpush():
+    print("Your patience has paid off. You now have the elixir to put a wizard and bomber behind your golem. You take a tower with 1 minute remaining")
+    waititout()
+
+def waititout():
+    print("You are now faced with a choice")
+    time.sleep(1)
+    userinput11 = input("Do you just play defense and wait it out, or do you keep playing agressive?")
+    if userinput11.lower() == "wait it out":
+        print("smart")
+        winwin()
+    elif userinput11.lower() == "keep playing agressive":
+        print("Risky Choice")
+        hahalose()
+    else:
+        print("Only answer wait it out or keep playing agressive")
+
+def hahalose():
+    print("Your aggression was your demise")
+    print("Your opponent counter pushes and you have no elixir to defend, thus you lose")
+
+def winwin():
+    print("You chose to wait and play smart")
+    time.sleep(1)
+    print("You stop a push and counterpush and it 3 crowns! You win")
+    optionplay()
+
+
+
+def ladder():
+    print("I hope you get into Master 1")
+    userinput2 = ()
+    firstpush()
+
+def firstpush():
+    print("You reach max elixir and must create a push")
+    time.sleep(2)
+    userinput5 = input("Do you play hog+minion horde or knight+graveyard?")
+    if userinput5.lower() == "hog+minion horde":
+        bestpush()
+    elif userinput5.lower() == "knight+graveyard":
+        mariospush()
+    else:
+        print("Only answer with hog+minion horde or knight+graveyard")
+        firstpush()
+
+def mariospush():
+    print("Mario would be proud")
+    time.sleep(1)
+    print("The opponent counters with posion and mini-pekka but not before half the tower HP is taken")
+    win22()
+
+def win22():
+    print("")
+    userinput21 = input ("You have the lead, but do you now play aggressive or play for the win?")
+    if userinput21.lower() == "play aggressive":
+            print("Not a smart choice, you lose")
+            optionplay()
+    elif userinput21.lower() == "play for the win":
+            print("Your high IQ wins you the game in the long run")
+            optionplay()
+    else:
+        print("Only answer with play aggressive or play for the win")
+        win22()
+
+
+
+def bestpush():
+    print("The opponent counters with bats so you end up taking the tower!")
+    time.sleep(2)
+    print("You smartly play defensive the rest of the game and win 1-0")
+    optionplay()
+
+
+def optionplay():
+    print("")
+    userinputplay = input("Play Again?")
+    if userinputplay.lower() == "yes":
+        ClashRoyale()
+    elif userinputplay.lower() == "no":
+        print("OK")
+    else:
+        print("Only answer yes or no")
+
+
+
+
+def ClashRoyale():
+    print("You are loading into Clash Royale, Choose your game mode")
+    time.sleep(1)
+    userinput1 = input("2v2 or ladder?")
+    if userinput1.lower() == "2v2":
+        v2()
+    elif userinput1.lower() == "ladder":
+        ladder()
+    else:
+        print("Only answer with 2v2 or ladder")
+        ClashRoyale()
+
+
+ClashRoyale()
+
+
+
