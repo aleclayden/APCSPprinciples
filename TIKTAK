@@ -1,0 +1,64 @@
+import turtle
+
+#Defining the window
+window = turtle.Screen()
+window.bgcolor("Aqua")
+window.title("Tic Tac Toe")
+
+
+#Defining My Turtle
+j = turtle.Turtle()
+j.color("Yellow")
+j.pensize(5)
+j.shape("triangle")
+
+#Make the Board
+def square():
+    j.speed(10)
+    #To get a blank line so there is no overlap
+    j.color("Aqua")
+    j.goto(-200, 200)
+    #Reset Color
+    j.color("Yellow")
+    j.forward(450)
+    j.right(90)
+    j.forward(450)
+    j.right(90)
+    j.forward(450)
+    j.right(90)
+    j.forward(450)
+    j.right(90)
+    j.forward(150)
+    j.right(90)
+    j.forward(450)
+    j.left(90)
+    j.forward(150)
+    j.left(90)
+    j.forward(450)
+    j.right(90)
+    j.forward(150)
+    j.right(90)
+    j.forward(150)
+    j.right(90)
+    j.forward(450)
+    j.left(90)
+    j.forward(150)
+    j.left(90)
+    j.forward(450)
+
+
+square()
+
+
+
+
+
+
+
+
+
+
+
+
+
+window.mainloop()
