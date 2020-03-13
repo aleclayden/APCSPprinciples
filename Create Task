@@ -1,0 +1,97 @@
+from tkinter import*
+
+window =Tk()
+
+#Canvas Setup
+playground = Canvas(window, width = 1120, height = 495, bg = "white")
+playground.pack()
+
+#Background Photo
+parking = PhotoImage(file ="ParkingLot2.0.gif")
+courseBg = playground.create_image(0,0, anchor = NW, image = parking)
+#Second Image
+carPic = PhotoImage(file = "Webp.net-resizeimage.png")
+car = playground.create_image(0,0, anchor = NW, image = carPic)
+#biggest chunk of cars in parking lot part 1
+p1 = PhotoImage(file = "bigp1.png")
+bigp1 = playground.create_image(136,275, anchor =NW, image = p1)
+#biggest chunk of cars in parking lot part 2
+p2 = PhotoImage(file ="bigp2.png")
+bigp2 = playground.create_image(136, 135, anchor = NW, image = p2)
+
+
+
+
+def parkinglotboundary():
+    lotBbox = playground.bbox(car)
+    carx1 = lotBbox[0]
+    carx2 = lotBbox[1]
+    cary1 = lotBbox[2]
+    cary2 = lotBbox[3]
+
+#Window Boundaries for the car
+    if carx2 > 700:
+       playground.move(car, -10,0)
+    elif carx2 < 10:
+        playground.move(car, 0, 10)
+    elif carx1 < 10:
+       playground.move(car, 10,0)
+    elif cary1 < -10:
+       playground.move(car, 0,10)
+    elif cary2 > 495:
+       playground.move(car, 0,-10)
+    elif carx1 > 948:
+        playground.move(car, -10, 0)
+    elif carx1 > 925 and y > 50 and y < 300:
+        #need to creat y defined
+        firstLabel = Label(window, text = "Congradulations You did it!", bg = "grey", fg="white", height = "1", width = "30")
+        firstLabel.place(x=400, y=200)
+
+
+
+
+
+#need to create boundary with parking lots
+
+
+firstLabel = Label(window, text = "get into the 1-star parking space to win", bg = "grey", fg="white", height = "1", width = "30")
+firstLabel.place(x=400, y=0)
+
+
+
+
+def moveright(event):
+    for i in range(1):
+        playground.move(car, 10, 0)
+        parkinglotboundary()
+
+
+def moveleft(event):
+   for i in range (1):
+       playground.move(car, -10,0)
+       parkinglotboundary()
+
+def moveup(event):
+   for i in range (1):
+       playground.move(car, 0,-10)
+       parkinglotboundary()
+
+def movedown(event):
+   for i in range (1):
+       playground.move(car, 0,10)
+       parkinglotboundary()
+
+
+
+
+
+playground.bind_all("<Up>",moveup)
+playground.bind_all("<Down>",movedown)
+playground.bind_all("<Right>",moveright)
+playground.bind_all("<Left>",moveleft)
+
+
+window.mainloop()
+
+
+
